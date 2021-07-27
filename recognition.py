@@ -25,19 +25,26 @@ while True:
         roi_gray = gray[y:y+h,x:x+w]
         roi_gray = cv2.resize(roi_gray,(48,48),interpolation=cv2.INTER_AREA)
 
-
-
         if np.sum([roi_gray])!=0:
             roi = roi_gray.astype('float')/255.0
             roi = img_to_array(roi)
             roi = np.expand_dims(roi,axis=0)
 
             prediction = classifier.predict(roi)[0]
-            label=emotion_labels[prediction.argmax()]
-            label_position = (x,y)
-            cv2.putText(frame,label,label_position,cv2.FONT_HERSHEY_SIMPLEX,1,(0,255,0),2)
+            labelPredicted=emotion_labels[prediction.argmax()]
+
+            cv2.putText(frame,labelPredicted,(x,y-5),cv2.FONT_HERSHEY_SIMPLEX,1,(0,0,255),2)
+
+            cv2.putText(frame,"Surprised " + str(round(prediction[6]*100, 2)),(x,y-35),cv2.FONT_HERSHEY_SIMPLEX,1,(0,255,0),2)
+            cv2.putText(frame,"Sad " + str(round(prediction[5]*100, 2)),(x,y-65),cv2.FONT_HERSHEY_SIMPLEX,1,(0,255,0),2)
+            cv2.putText(frame,"Neutral " + str(round(prediction[4]*100, 2)),(x,y-95),cv2.FONT_HERSHEY_SIMPLEX,1,(0,255,0),2)
+            cv2.putText(frame,"Happy " + str(round(prediction[3]*100, 2)),(x,y-125),cv2.FONT_HERSHEY_SIMPLEX,1,(0,255,0),2)
+            cv2.putText(frame,"Fear " + str(round(prediction[2]*100, 2)),(x,y-155),cv2.FONT_HERSHEY_SIMPLEX,1,(0,255,0),2)
+            cv2.putText(frame,"Disgust " + str(round(prediction[1]*100, 2)),(x,y-185),cv2.FONT_HERSHEY_SIMPLEX,1,(0,255,0),2)
+            cv2.putText(frame,"Angry " + str(round(prediction[0]*100, 2)),(x,y-215),cv2.FONT_HERSHEY_SIMPLEX,1,(0,255,0),2)
         else:
             cv2.putText(frame,'No Faces',(30,80),cv2.FONT_HERSHEY_SIMPLEX,1,(0,255,0),2)
+            
     cv2.imshow('Emotion Detector',frame)
     if cv2.waitKey(1) & 0xFF == ord('q'):
         break
