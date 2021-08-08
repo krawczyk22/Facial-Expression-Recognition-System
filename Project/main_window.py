@@ -7,7 +7,7 @@ from PyQt5.QtWidgets import QWidget
 from PyQt5.QtGui import QImage
 from PyQt5.QtGui import QPixmap
 from PyQt5.QtCore import QTimer, QObject
-from PyQt5.QtCore import pyqtSignal
+from PyQt5.QtCore import pyqtSignal, QThread
 
 # import Opencv module
 from keras.models import load_model
@@ -20,11 +20,20 @@ import numpy as np
 
 from ui_main_window import *
 
-class DummyThread(QObject):
-    finished = pyqtSignal()
+class DummyThread(QThread):
+    finished = pyqtSignal(int)
+    def __init__(self, parent=None, index=0):
+        super(DummyThread, self).__init__(parent)
+        self.index = index
+        self.is_running = True
+
     def run(self):
         time.sleep(0)
         self.finished.emit()
+
+    def stop(self):
+        self.is_running = False
+        self.terminate()
 
 class MainWindow(QWidget):
     # class constructor

@@ -14,7 +14,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_Form(object):
     def setupUi(self, Form):
         Form.setObjectName("Form")
-        Form.resize(707, 388)
+        Form.resize(920, 469)
         self.horizontalLayout = QtWidgets.QHBoxLayout(Form)
         self.horizontalLayout.setObjectName("horizontalLayout")
         self.horizontalLayout_6 = QtWidgets.QHBoxLayout()
@@ -144,13 +144,13 @@ class Ui_Form(object):
         self.labelNeutral.setText(_translate("Form", "Neutral"))
         self.labelSad.setText(_translate("Form", "Sad"))
         self.labelSurprise.setText(_translate("Form", "Surprise"))
-        self.labelAngry_2.setText(_translate("Form", "TextLabel"))
-        self.labelDisgust_2.setText(_translate("Form", "TextLabel"))
-        self.labelFear_2.setText(_translate("Form", "TextLabel"))
-        self.labelHappy_2.setText(_translate("Form", "TextLabel"))
-        self.labelNeutral_2.setText(_translate("Form", "TextLabel"))
-        self.labelSad_2.setText(_translate("Form", "TextLabel"))
-        self.labelSurprise_2.setText(_translate("Form", "TextLabel"))
+        self.labelAngry_2.setText(_translate("Form", "0%"))
+        self.labelDisgust_2.setText(_translate("Form", "0%"))
+        self.labelFear_2.setText(_translate("Form", "0%"))
+        self.labelHappy_2.setText(_translate("Form", "0%"))
+        self.labelNeutral_2.setText(_translate("Form", "0%"))
+        self.labelSad_2.setText(_translate("Form", "0%"))
+        self.labelSurprise_2.setText(_translate("Form", "0%"))
 
 
 if __name__ == "__main__":

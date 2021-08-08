@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>707</width>
-    <height>388</height>
+    <width>920</width>
+    <height>469</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -42,9 +42,15 @@
        </item>
        <item>
         <widget class="QPushButton" name="control_bt">
+         <property name="minimumSize">
+          <size>
+           <width>640</width>
+           <height>0</height>
+          </size>
+         </property>
          <property name="maximumSize">
           <size>
-           <width>400</width>
+           <width>640</width>
            <height>40</height>
           </size>
          </property>
@@ -113,49 +119,49 @@
        <item>
         <widget class="QLabel" name="labelAngry_2">
          <property name="text">
-          <string>TextLabel</string>
+          <string>0%</string>
          </property>
         </widget>
        </item>
        <item>
         <widget class="QLabel" name="labelDisgust_2">
          <property name="text">
-          <string>TextLabel</string>
+          <string>0%</string>
          </property>
         </widget>
        </item>
        <item>
         <widget class="QLabel" name="labelFear_2">
          <property name="text">
-          <string>TextLabel</string>
+          <string>0%</string>
          </property>
         </widget>
        </item>
        <item>
         <widget class="QLabel" name="labelHappy_2">
          <property name="text">
-          <string>TextLabel</string>
+          <string>0%</string>
          </property>
         </widget>
        </item>
        <item>
         <widget class="QLabel" name="labelNeutral_2">
          <property name="text">
-          <string>TextLabel</string>
+          <string>0%</string>
          </property>
         </widget>
        </item>
        <item>
         <widget class="QLabel" name="labelSad_2">
          <property name="text">
-          <string>TextLabel</string>
+          <string>0%</string>
          </property>
         </widget>
        </item>
        <item>
         <widget class="QLabel" name="labelSurprise_2">
          <property name="text">
-          <string>TextLabel</string>
+          <string>0%</string>
          </property>
         </widget>
        </item>
