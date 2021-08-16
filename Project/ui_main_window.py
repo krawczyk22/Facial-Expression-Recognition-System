@@ -25,10 +25,12 @@ class Ui_Form(object):
         self.image_label.setEnabled(True)
         self.image_label.setMinimumSize(QtCore.QSize(640, 400))
         self.image_label.setMaximumSize(QtCore.QSize(640, 400))
+        self.image_label.setAlignment(QtCore.Qt.AlignCenter)
         self.image_label.setObjectName("image_label")
         self.verticalLayout.addWidget(self.image_label)
         self.control_bt = QtWidgets.QPushButton(Form)
-        self.control_bt.setMaximumSize(QtCore.QSize(400, 40))
+        self.control_bt.setMinimumSize(QtCore.QSize(640, 0))
+        self.control_bt.setMaximumSize(QtCore.QSize(640, 40))
         self.control_bt.setObjectName("control_bt")
         self.verticalLayout.addWidget(self.control_bt)
         self.horizontalLayout_6.addLayout(self.verticalLayout)
@@ -135,7 +137,7 @@ class Ui_Form(object):
     def retranslateUi(self, Form):
         _translate = QtCore.QCoreApplication.translate
         Form.setWindowTitle(_translate("Form", "Cam view"))
-        self.image_label.setText(_translate("Form", "TextLabel"))
+        self.image_label.setText(_translate("Form", "Facial Expression Recognition System"))
         self.control_bt.setText(_translate("Form", "Start"))
         self.labelAngry.setText(_translate("Form", "Angry"))
         self.labelDisgust.setText(_translate("Form", "Disgust"))

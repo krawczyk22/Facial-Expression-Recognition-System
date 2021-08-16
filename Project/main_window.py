@@ -51,7 +51,10 @@ class MainWindow(QWidget):
         gray = cv2.cvtColor(image,cv2.COLOR_BGR2GRAY)
         faces = self.face_classifier.detectMultiScale(gray)
 
-        for (x,y,w,h) in faces:
+        if len(faces) > 0:
+        #for (x,y,w,h) in faces:
+            faces = sorted(faces, reverse=True, key=lambda x: (x[2] - x[0]) * (x[3] - x[1]))[0]
+            (x, y, w, h) = faces
             cv2.rectangle(image2,(x,y),(x+w,y+h),(0,255,255),2)
             roi_gray = gray[y:y+h,x:x+w]
             roi_gray = cv2.resize(roi_gray,(48,48),interpolation=cv2.INTER_AREA)
@@ -63,6 +66,7 @@ class MainWindow(QWidget):
 
                 prediction = self.classifier.predict(roi)[0]
                 labelPredicted=self.emotion_labels[prediction.argmax()]
+
                 cv2.putText(image2,labelPredicted,(x,y-5),cv2.FONT_HERSHEY_SIMPLEX,1,(0,0,255),2)
 
                 angry = int(round(float(prediction[0])*100, 2))
@@ -118,6 +122,9 @@ class MainWindow(QWidget):
             self.cap.release()
             # update control_bt text
             self.ui.control_bt.setText("Start")
+
+    def closeMainWindow(self):
+        pass
 
 
 if __name__ == '__main__':
