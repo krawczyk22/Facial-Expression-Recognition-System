@@ -20,21 +20,6 @@ import numpy as np
 
 from ui_main_window import *
 
-class DummyThread(QThread):
-    finished = pyqtSignal(int)
-    def __init__(self, parent=None, index=0):
-        super(DummyThread, self).__init__(parent)
-        self.index = index
-        self.is_running = True
-
-    def run(self):
-        time.sleep(0)
-        self.finished.emit()
-
-    def stop(self):
-        self.is_running = False
-        self.terminate()
-
 class MainWindow(QWidget):
     # class constructor
     def __init__(self):
@@ -80,28 +65,32 @@ class MainWindow(QWidget):
                 labelPredicted=self.emotion_labels[prediction.argmax()]
                 cv2.putText(image2,labelPredicted,(x,y-5),cv2.FONT_HERSHEY_SIMPLEX,1,(0,0,255),2)
 
-                thread = DummyThread(self)
-                thread.start()
-                thread.finished.connect(lambda : self.changeLabels(prediction))
+                angry = int(round(float(prediction[0])*100, 2))
+                disgust = int(round(float(prediction[1])*100, 2))
+                fear = int(round(float(prediction[2])*100, 2))
+                happy = int(round(float(prediction[3])*100, 2))
+                neutral = int(round(float(prediction[4])*100, 2))
+                sad = int(round(float(prediction[5])*100, 2))
+                surprise = int(round(float(prediction[6])*100, 2))
+
+                self.ui.progressBarAngry.setProperty("value", angry)
+                self.ui.progressBarDisgust.setProperty("value", disgust)
+                self.ui.progressBarFear.setProperty("value", fear)
+                self.ui.progressBarHappy.setProperty("value", happy)
+                self.ui.progressBarNeutral.setProperty("value", neutral)
+                self.ui.progressBarSad.setProperty("value", sad)
+                self.ui.progressBarSurprise.setProperty("value", surprise)
+
+                self.ui.labelAngry_2.setText(str(angry) + "%")
+                self.ui.labelDisgust_2.setText(str(disgust) + "%")
+                self.ui.labelFear_2.setText(str(fear) + "%")
+                self.ui.labelHappy_2.setText(str(happy) + "%")
+                self.ui.labelNeutral_2.setText(str(neutral) + "%")
+                self.ui.labelSad_2.setText(str(sad) + "%")
+                self.ui.labelSurprise_2.setText(str(surprise) + "%")
 
             else:
                 cv2.putText(image2,'No Faces',(30,80),cv2.FONT_HERSHEY_SIMPLEX,1,(0,255,0),2)
-
-                self.ui.progressBarAngry.setProperty("value", 0)
-                self.ui.progressBarDisgust.setProperty("value", 0)
-                self.ui.progressBarFear.setProperty("value", 0)
-                self.ui.progressBarHappy.setProperty("value", 0)
-                self.ui.progressBarNeutral.setProperty("value", 0)
-                self.ui.progressBarSad.setProperty("value", 0)
-                self.ui.progressBarSurprise.setProperty("value", 0)
-
-                self.ui.labelAngry_2.setText("Form", "0", 2)
-                self.ui.labelDisgust_2.setText("Form", "0", 2)
-                self.ui.labelFear_2.setText("Form", "0", 2)
-                self.ui.labelHappy_2.setText("Form", "0")
-                self.ui.labelNeutral_2.setText("Form", "0")
-                self.ui.labelSad_2.setText("Form", "0")
-                self.ui.labelSurprise_2.setText("Form", "0")
 
         # get image infos
         height, width, channel = image2.shape
@@ -110,23 +99,6 @@ class MainWindow(QWidget):
         qImg = QImage(image2.data, width, height, step, QImage.Format_RGB888)
         # show image in img_label
         self.ui.image_label.setPixmap(QPixmap.fromImage(qImg))
-
-    def changeLabels(self, labels):
-        self.ui.progressBarAngry.setProperty("value", round(labels[0]*100, 2))
-        self.ui.progressBarDisgust.setProperty("value", round(labels[1]*100, 2))
-        self.ui.progressBarFear.setProperty("value", round(labels[2]*100, 2))
-        self.ui.progressBarHappy.setProperty("value", round(labels[3]*100, 2))
-        self.ui.progressBarNeutral.setProperty("value", round(labels[4]*100, 2))
-        self.ui.progressBarSad.setProperty("value", round(labels[5]*100, 2))
-        self.ui.progressBarSurprise.setProperty("value", round(labels[6]*100, 2))
-
-        #self.ui.labelAngry_2.setText("Form", str(round(labels[0]*100, 2)))
-        #self.ui.labelDisgust_2.setText("Form", str(round(labels[1]*100, 2)))
-        #self.ui.labelFear_2.setText("Form", str(round(labels[2]*100, 2)))
-        #self.ui.labelHappy_2.setText("Form", str(round(labels[3]*100, 2)))
-        #self.ui.labelNeutral_2.setText("Form", str(round(labels[4]*100, 2)))
-        #self.ui.labelSad_2.setText("Form", str(round(labels[5]*100, 2)))
-        #self.ui.labelSurprise_2.setText("Form", str(round(labels[6]*100, 2)))
 
     # start/stop timer
     def controlTimer(self):
