@@ -6,15 +6,11 @@ from PyQt5.QtWidgets import QApplication
 from PyQt5.QtWidgets import QWidget
 from PyQt5.QtGui import QImage
 from PyQt5.QtGui import QPixmap
-from PyQt5.QtCore import QTimer, QObject
-from PyQt5.QtCore import pyqtSignal, QThread
+from PyQt5.QtCore import QTimer
 
 # import Opencv module
 from keras.models import load_model
-from time import sleep
-import time
 from keras.preprocessing.image import img_to_array
-from keras.preprocessing import image
 import cv2
 import numpy as np
 
