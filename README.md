@@ -8,11 +8,11 @@ To launch the system, go to the Project directory of the repository and run it u
 After launching the system, press the “Start” button to enable camera capture. Subsequently, the camera capture can be halted using the “Stop” button and resumed with the “Start” button.
 
 <h2>Reused code</h2>
-The reused code used for training the neural network comes from the following sources: &#60;Accessed: 19/08/2021&#62; <br>
+The reused code used for training the neural network comes from the following sources: <br>
 YouTube: When Maths Meets Coding. Availabe at: https://www.youtube.com/watch?v=T3yR9DZT2mQ &#60;Accessed: 19/08/2021&#62; <br>
 YouTube: Akshit Madan. Availabe at: https://www.youtube.com/watch?v=Bb4Wvl57LIk &#60;Accessed: 19/08/2021&#62; <br>
 GitHub: Akmadan. Availabe at: https://github.com/akmadan/Emotion_Detection_CNN &#60;Accessed: 19/08/2021&#62; <br>
 <br>
-The reused code used for the GUI implementation comes from the following sources:
+The reused code used for the GUI implementation comes from the following sources: <br>
 YouTube: BERROUBA MOHAMED EL AMINE. Availabe at: https://www.youtube.com/watch?v=wSv4-Ne8e-Q &#60;Accessed: 19/08/2021&#62; <br>
 GitHub: berrouba-med-amine. Availabe at: https://github.com/berrouba-med-amine/simple-python-camera-viewer-opencv3-PyQt5 &#60;Accessed: 19/08/2021&#62;
