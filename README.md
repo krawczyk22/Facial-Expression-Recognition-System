@@ -8,11 +8,11 @@ To launch the system, go to the Project directory of the repository and run it u
 After launching the system, press the “Start” button to enable camera capture. Subsequently, the camera capture can be halted using the “Stop” button and resumed with the “Start” button.
 
 <h2>Reused code</h2>
-The reused code used for training the neural network comes from the following sources:
-YouTube: When Maths Meets Coding. Availabe at: https://www.youtube.com/watch?v=T3yR9DZT2mQ <\Accessed: 19/08/2021\>
-YouTube: Akshit Madan. Availabe at: https://www.youtube.com/watch?v=Bb4Wvl57LIk <\Accessed: 19/08/2021\>
-GitHub: Akmadan. Availabe at: https://github.com/akmadan/Emotion_Detection_CNN <\Accessed: 19/08/2021\>
-
+The reused code used for training the neural network comes from the following sources: &#92;Accessed: 19/08/2021&#92; </br>
+YouTube: When Maths Meets Coding. Availabe at: https://www.youtube.com/watch?v=T3yR9DZT2mQ &#92;Accessed: 19/08/2021&#92; </br>
+YouTube: Akshit Madan. Availabe at: https://www.youtube.com/watch?v=Bb4Wvl57LIk &#92;Accessed: 19/08/2021&#92; </br>
+GitHub: Akmadan. Availabe at: https://github.com/akmadan/Emotion_Detection_CNN &#92;Accessed: 19/08/2021&#92; </br>
+</br>
 The reused code used for the GUI implementation comes from the following sources:
-YouTube: BERROUBA MOHAMED EL AMINE. Availabe at: https://www.youtube.com/watch?v=wSv4-Ne8e-Q <\Accessed: 19/08/2021\>
-GitHub: berrouba-med-amine. Availabe at: https://github.com/berrouba-med-amine/simple-python-camera-viewer-opencv3-PyQt5 
+YouTube: BERROUBA MOHAMED EL AMINE. Availabe at: https://www.youtube.com/watch?v=wSv4-Ne8e-Q &#92;Accessed: 19/08/2021&#92; </br>
+GitHub: berrouba-med-amine. Availabe at: https://github.com/berrouba-med-amine/simple-python-camera-viewer-opencv3-PyQt5 &#92;Accessed: 19/08/2021&#92; </br>
