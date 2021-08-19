@@ -49,6 +49,7 @@ class MainWindow(QWidget):
 
         if len(faces) > 0:
         #for (x,y,w,h) in faces:
+            # select one
             faces = sorted(faces, reverse=True, key=lambda x: (x[2] - x[0]) * (x[3] - x[1]))[0]
             (x, y, w, h) = faces
             cv2.rectangle(image2,(x,y),(x+w,y+h),(0,255,255),2)
@@ -60,11 +61,13 @@ class MainWindow(QWidget):
                 roi = img_to_array(roi)
                 roi = np.expand_dims(roi,axis=0)
 
+                # predict classes for the fed image
                 prediction = self.classifier.predict(roi)[0]
                 labelPredicted=self.emotion_labels[prediction.argmax()]
 
                 cv2.putText(image2,labelPredicted,(x,y-5),cv2.FONT_HERSHEY_SIMPLEX,1,(0,0,255),2)
 
+                # transform values to percentages
                 angry = int(round(float(prediction[0])*100, 2))
                 disgust = int(round(float(prediction[1])*100, 2))
                 fear = int(round(float(prediction[2])*100, 2))
@@ -73,6 +76,7 @@ class MainWindow(QWidget):
                 sad = int(round(float(prediction[5])*100, 2))
                 surprise = int(round(float(prediction[6])*100, 2))
 
+                # update the measuring bars and labels
                 self.ui.progressBarAngry.setProperty("value", angry)
                 self.ui.progressBarDisgust.setProperty("value", disgust)
                 self.ui.progressBarFear.setProperty("value", fear)
@@ -80,7 +84,6 @@ class MainWindow(QWidget):
                 self.ui.progressBarNeutral.setProperty("value", neutral)
                 self.ui.progressBarSad.setProperty("value", sad)
                 self.ui.progressBarSurprise.setProperty("value", surprise)
-
                 self.ui.labelAngry_2.setText(str(angry) + "%")
                 self.ui.labelDisgust_2.setText(str(disgust) + "%")
                 self.ui.labelFear_2.setText(str(fear) + "%")
@@ -119,15 +122,9 @@ class MainWindow(QWidget):
             # update control_bt text
             self.ui.control_bt.setText("Start")
 
-    def closeMainWindow(self):
-        pass
-
-
 if __name__ == '__main__':
     app = QApplication(sys.argv)
-
     # create and show mainWindow
     mainWindow = MainWindow()
     mainWindow.show()
-
     sys.exit(app.exec_())
