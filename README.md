@@ -15,4 +15,4 @@ GitHub: Akmadan. Availabe at: https://github.com/akmadan/Emotion_Detection_CNN &
 <br>
 The reused code used for the GUI implementation comes from the following sources: <br>
 YouTube: BERROUBA MOHAMED EL AMINE. Availabe at: https://www.youtube.com/watch?v=wSv4-Ne8e-Q &#60;Accessed: 19/08/2021&#62; <br>
-GitHub: berrouba-med-amine. Availabe at: https://github.com/berrouba-med-amine/simple-python-camera-viewer-opencv3-PyQt5 &#60;Accessed: 19/08/2021&#62;
+GitHub: berrouba-med-amine. Availabe at: https://github.com/berrouba-med-amine/simple-python-camera-viewer-opencv3-PyQt5 &#60;Accessed: 19/08/2021&#62; 
