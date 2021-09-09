@@ -18,6 +18,6 @@ YouTube: BERROUBA MOHAMED EL AMINE. Availabe at: https://www.youtube.com/watch?v
 GitHub: berrouba-med-amine. Availabe at: https://github.com/berrouba-med-amine/simple-python-camera-viewer-opencv3-PyQt5 &#60;Accessed: 19/08/2021&#62; 
 
 <h2>Dataset</h2>
-The model training and the conducted experiments have been performend using the Fer2013 and JAFFE datasets available here:&#62; <br>
-Fer2013: https://www.kaggle.com/deadskull7/fer2013 &#60; Accessed: 19/08/2021 &#62; <br>
-JAFFE: https://zenodo.org/record/3451524#.YTntptNKhQI &#60; Accessed: 19/08/2021 &#62; <br>
+The model training and the conducted experiments have been performend using the Fer2013 and JAFFE datasets available here: <br>
+Fer2013: https://www.kaggle.com/deadskull7/fer2013 &#60;Accessed: 19/08/2021 &#62; <br>
+JAFFE: https://zenodo.org/record/3451524#.YTntptNKhQI &#60;Accessed: 19/08/2021 &#62; <br>
